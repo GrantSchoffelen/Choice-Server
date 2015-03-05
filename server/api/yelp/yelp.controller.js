@@ -43,13 +43,16 @@ exports.getCheerio = function(req, res) {
                 else{
                 var htmlFromYelp = response.body;
                 var $ = cheerio.load(htmlFromYelp);
-                var price = $('.price-range').text()
-                var priceRange = $(".price-description").text()
-                var hours = $(".hour-range").text()
-                console.log(hours)
-                console.log(priceRange)
-                console.log(price)
-                item.price = price
+                item.price = $('.price-range').text()
+                item.priceRange = $(".price-description").text()
+                item.hours = $(".hour-range").text()
+
+
+
+
+
+                // item.hours = hours
+                // item.price = price
                 cb(err, item)
 
             }
