@@ -46,7 +46,8 @@ exports.getCheerio = function(req, res) {
                 item.price = $('.price-range').text()
                 item.priceRange = $(".price-description").text()
                 item.hours = $(".hour-range").text()
-
+                item.dircs = $()
+                console.log(item.deal)
 
 
 
