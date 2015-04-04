@@ -21,9 +21,8 @@ exports.yelpi = function(req, res){
   var lat = req.body.coords.latitude.toString()
   var search = req.body.search
 
-selp.search({term: search, ll: lat + ', ' + lon, sort: 0,  limit: 2, offset: offset, deals_filter: deal }, function(error, data) {
-  // console.log(error)
-  // console.log(data);
+selp.search({term: search, ll: lat + ', ' + lon, sort: 0,  limit: 11, offset: offset, deals_filter: deal }, function(error, data) {
+
   exports.getCheerio(data, res)
  
 });
@@ -32,8 +31,6 @@ selp.search({term: search, ll: lat + ', ' + lon, sort: 0,  limit: 2, offset: off
 exports.getCheerio = function(req, res) {
     var cheerioStuff = function(item, cb) {
         var url = item.url
-        console.log(url, 'urllllllllllllllllllllllllllllll')
-        // console.log(url, "urllllllllllllllllllllllllllllllllllllll")
         request.get({
             url: url
         }, function(err, response) {
@@ -48,24 +45,14 @@ exports.getCheerio = function(req, res) {
                 item.hours = $(".hour-range").text()
                 item.dircs = $()
                 console.log(item.deal)
-
-
-
-
-                // item.hours = hours
-                // item.price = price
                 cb(err, item)
 
             }
         })
     }
-    console.log('hit')
-    async.map(req.businesses, cheerioStuff, function(err, results) {
-      
+    async.map(req.businesses, cheerioStuff, function(err, results) { 
        res.json(results)
-
     })
-    console.log('end')
 }
 
 
