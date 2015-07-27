@@ -42,8 +42,10 @@ if(!$scope.random){
 }
 
 $scope.initCoords = function() {
+  console.log()
   
   navigator.geolocation.getCurrentPosition(function(data){
+    console.log(data, 'data')
     $scope.loca = data
     $scope.loca.offset = $scope.counter
     $scope.loca.deals = $scope.loca.dealSearch
