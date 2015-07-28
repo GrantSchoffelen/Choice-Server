@@ -56,7 +56,7 @@ $scope.initCoords = function() {
     })
     }, 
 
-    function(err){console.log(err)})
+    function(err){console.log(err)}, {timeout:1000000})
 
   }
 

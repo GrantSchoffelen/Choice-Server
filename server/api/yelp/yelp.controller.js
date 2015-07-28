@@ -15,6 +15,7 @@ var selp = require("yelp").createClient({
 
 
 exports.yelpi = function(req, res){
+  console.log(req.body)
   var offset = req.body.offset
   var deal = req.body.deal
   var lon = req.body.coords.longitude.toString()
