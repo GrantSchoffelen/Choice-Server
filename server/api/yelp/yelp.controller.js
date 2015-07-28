@@ -8,8 +8,8 @@ var request = require('request')
 var selp = require("yelp").createClient({
   consumer_key: "2jeoJ5NnpuKb5_c4-FZ1zg", 
   consumer_secret: "P9UZhcrwvDh_Z1SnUQ0SNm4rYHk",
-  token: "1CRKUxRxleEOaWHcaiAzu5NcL5i5TA8z",
-  token_secret: "cH4EY9nMB1oO4kmxQmZh_7L73hQ", 
+  token: "rReaWq-1Xa7IMDbPMG6MvZMVnRz9MD98",
+  token_secret: "HgyDnXAgt4FEVED4Dl3Ktem196o", 
   ssl: true
 });
 
